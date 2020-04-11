@@ -8,16 +8,16 @@ const UserSchema = mongoose.Schema({
   },
   username: {
     type: String,
-    unique: true,
+    unique: false,
     required: true,
   },
   passwordHash: {
     type: String,
     unique: true,
-    required: true,
+    required: false,
   },
   createdAt: String,
-}, { timestamp: true });
+}, { autoIndex: false });
 
 
 module.exports = mongoose.model('user', UserSchema);

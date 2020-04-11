@@ -6,6 +6,7 @@ const getAllUsers = () => UserEntity.find();
 
 const findUser = (data) => UserEntity.findOne(data, (err, res) => res);
 
+
 module.exports = {
   createUser,
   getAllUsers,
