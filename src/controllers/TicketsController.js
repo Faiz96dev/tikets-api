@@ -2,12 +2,14 @@ const { Router } = require('express');
 const bodyParser = require('body-parser').json();
 const logger = require('../services/LoggerService');
 const TicketService = require('../services/TicketService');
-const {JwtVerifier} = require('../services/JwtVerifierService');
+const { AuthMiddleware } = require('../services/JwtVerifierService');
 const { errors } = require('../constants/messages');
 
 const TicketsRouter = Router();
 
-TicketsRouter.get('/tickets', JwtVerifier, async (req, res) => {
+TicketsRouter.use(AuthMiddleware);
+
+TicketsRouter.get('/tickets', async (req, res) => {
   try {
     const tickets = await TicketService.getTickets();
     return res.status(200).json(tickets);
@@ -17,7 +19,7 @@ TicketsRouter.get('/tickets', JwtVerifier, async (req, res) => {
   }
 });
 
-TicketsRouter.post('/tickets', JwtVerifier, bodyParser, async (req, res) => {
+TicketsRouter.post('/tickets', bodyParser, async (req, res) => {
   const { direction, price } = req.body;
   try {
     const tickets = await TicketService.createTicket({ direction, price });
@@ -28,7 +30,7 @@ TicketsRouter.post('/tickets', JwtVerifier, bodyParser, async (req, res) => {
   }
 });
 
-TicketsRouter.delete('/tickets', JwtVerifier, bodyParser, async (req, res) => {
+TicketsRouter.delete('/tickets', bodyParser, async (req, res) => {
   const { id } = req.body;
   try {
     const tickets = await TicketService.deleteTicket({ _id: id });
@@ -39,7 +41,7 @@ TicketsRouter.delete('/tickets', JwtVerifier, bodyParser, async (req, res) => {
   }
 });
 
-TicketsRouter.get('/tickets/:id', JwtVerifier, bodyParser, async (req, res) => {
+TicketsRouter.get('/tickets/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const tickets = await TicketService.findTicket({ _id: id });
@@ -50,7 +52,7 @@ TicketsRouter.get('/tickets/:id', JwtVerifier, bodyParser, async (req, res) => {
   }
 });
 
-TicketsRouter.put('/tickets/:id', JwtVerifier, bodyParser, async (req, res) => {
+TicketsRouter.put('/tickets/:id', async (req, res) => {
   const { id } = req.params;
   const updatedTicket = { direction: req.body.direction, price: req.body.price };
   try {

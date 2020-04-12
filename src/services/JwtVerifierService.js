@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { errors } = require('../constants/messages');
 
-const JwtVerifier = async (req, res, next) => {
+const AuthMiddleware = async (req, res, next) => {
   const token = req.headers.authorization;
   if (!token) {
     return res.status(401).json({ message: errors.common[401] });
@@ -15,5 +15,5 @@ const JwtVerifier = async (req, res, next) => {
 };
 
 module.exports = {
-  JwtVerifier,
+  AuthMiddleware,
 };
