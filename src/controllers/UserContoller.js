@@ -9,7 +9,6 @@ UserRouter.post('/signup', async (req, res) => {
   try {
     const data = req.body;
     const user = await UserService.signUp(data);
-    console.log('USER', user);
     return res.status(200).json(user);
   } catch (err) {
     logger.error(err.message);
