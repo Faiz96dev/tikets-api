@@ -1,4 +1,4 @@
-const { Router } = require('express');
+const Router = require('express');
 const logger = require('../services/LoggerService');
 const UserService = require('../services/UserService');
 const { errors } = require('../constants/messages');
@@ -6,6 +6,7 @@ const { errors } = require('../constants/messages');
 const UserRouter = Router();
 
 UserRouter.post('/signup', async (req, res) => {
+  console.log('req', req);
   try {
     const data = req.body;
     const user = await UserService.signUp(data);

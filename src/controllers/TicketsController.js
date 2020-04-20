@@ -7,7 +7,7 @@ const { errors } = require('../constants/messages');
 
 const TicketsRouter = Router();
 
-TicketsRouter.use(AuthMiddleware);
+// TicketsRouter.use(AuthMiddleware);
 
 TicketsRouter.get('/tickets', async (req, res) => {
   try {
