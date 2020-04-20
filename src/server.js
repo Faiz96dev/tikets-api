@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const TicketsController = require('./controllers/TicketsController');
+const AuthController = require('./controllers/AuthController');
 const logger = require('./services/LoggerService');
 const mongoose = require('./DB/MongooseModule');
 
@@ -11,6 +12,7 @@ const bootstrap = async () => {
   await mongoose.connect();
 
   app.use('/tickets', TicketsController);
+  app.use('/auth', AuthController);
 
   app.listen(process.env.PORT, () => {
     logger.info(`Server start at: ${process.env.PORT}`);

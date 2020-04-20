@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TicketSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
   email: {
     type: String,
     required: true,
@@ -11,4 +11,4 @@ const TicketSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('tickets', TicketSchema);
+module.exports = mongoose.model('user', UserSchema);
