@@ -4,10 +4,6 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -20,22 +16,17 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Fazyr" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e1a7346-bd59-45a1-a15d-c5cf5b6d28e9" name="Default Changelist" comment="test1">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/tikets-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/npm-debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/jwt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/jwt.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AuthController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/UsersRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/UsersRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AuthService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +34,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Fazyr" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -100,7 +103,8 @@
       <updated>1587372182853</updated>
       <workItem from="1587372184216" duration="2525000" />
       <workItem from="1587375742650" duration="6857000" />
-      <workItem from="1587384407649" duration="2313000" />
+      <workItem from="1587384407649" duration="9521000" />
+      <workItem from="1587479372366" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587376453363</created>
@@ -123,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587380871848</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test1">
+      <created>1587387258397</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587387258397</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,19 +145,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Fazyr" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -172,10 +171,14 @@
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="466" y="157" width="424" height="487" key="FileChooserDialogImpl/0.30.1366.738@0.30.1366.738" timestamp="1587375739885" />
-    <state x="488" y="315" width="389" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587378500798">
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1587389047840">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="488" y="315" width="389" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1366.738@0.30.1366.738" timestamp="1587378500798" />
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1587389047840" />
+    <state x="488" y="315" width="389" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587388433273">
+      <screen x="0" y="30" width="1366" height="738" />
+    </state>
+    <state x="488" y="315" width="389" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1366.738@0.30.1366.738" timestamp="1587388433273" />
     <state x="0" y="30" width="583" height="738" key="find.popup" timestamp="1587385881708">
       <screen x="0" y="30" width="1366" height="738" />
     </state>

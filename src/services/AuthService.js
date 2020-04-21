@@ -1,19 +1,22 @@
-const UsersRepository = require('../repositories/UsersRepository');
-const {secret} = require('../constants/jwt.config')
 const bcrypt = require('bcrypt');
-const getTickets = () => UsersRepository.getAllUsers();
+const UsersRepository = require('../repositories/UsersRepository');
+// const { secret } = require('../constants/jwt.config');
+
+
+const ReturnAuthUsers = () => UsersRepository.getAllUsers();
 
 const CreateUser = async (email, password) => {
-    const exist = UsersRepository.FindUser(email)
-    if (exist) {
-        throw new Error('User already exist !')
-        return
-    }
-    const hash = bcrypt.hashSync(password, secret);
-    return UsersRepository.AddUser(email, hash)
-}
+  const salt = 10;
+  const finded = await UsersRepository.FindUser(email);
+  if (finded) {
+    return 'user already exist!';
+  }
+  const hash = await bcrypt.hash(password, salt);
+  console.log(hash);
+  return UsersRepository.AddUser(email, hash);
+};
 
 module.exports = {
-    getTickets,
-    CreateUser,
+  ReturnAuthUsers,
+  CreateUser,
 };
