@@ -2,16 +2,16 @@ const UserEntity = require('../entities/UserEntity');
 
 const getAllUsers = () => UserEntity.find();
 
-const FindUser = (email) => UserEntity.findOne({ email }, (err, finded) => (finded, err));
+const FindUser = async (email) => UserEntity.findOne({ email }, (user) => user);
 
-const AddUser = (email, hash) => {
+const AddUser = async (email, hash) => {
   const user = new UserEntity({
     passwordHash: hash,
     email,
   });
-  user.save((err) => {
+  await user.save((err) => {
     if (err) return console.error(err);
-    console.log(' user saved to  collection.');
+    return 'user saved to  collection.';
   });
 };
 

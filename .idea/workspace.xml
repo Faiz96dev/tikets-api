@@ -20,18 +20,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e1a7346-bd59-45a1-a15d-c5cf5b6d28e9" name="Default Changelist" comment="test1">
-      <change afterPath="$PROJECT_DIR$/src/npm-debug.log" afterDir="false" />
+    <list default="true" id="2e1a7346-bd59-45a1-a15d-c5cf5b6d28e9" name="Default Changelist" comment="add reg enpoint">
+      <change afterPath="$PROJECT_DIR$/src/services/AuthMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/jwt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/jwt.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/UserEntity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/UserEntity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/UsersRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/UsersRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AuthService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -104,7 +115,9 @@
       <workItem from="1587372184216" duration="2525000" />
       <workItem from="1587375742650" duration="6857000" />
       <workItem from="1587384407649" duration="9521000" />
-      <workItem from="1587479372366" duration="351000" />
+      <workItem from="1587479372366" duration="4067000" />
+      <workItem from="1587528356609" duration="7357000" />
+      <workItem from="1587549915394" duration="12188000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1587376453363</created>
@@ -134,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587387258397</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add reg enpoint">
+      <created>1587479748047</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587479748047</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +176,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
     <MESSAGE value="test1" />
-    <option name="LAST_COMMIT_MESSAGE" value="test1" />
+    <MESSAGE value="add reg enpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="add reg enpoint" />
   </component>
   <component name="WindowStateProjectService">
     <state x="141" y="57" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587378567224">

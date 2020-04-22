@@ -12,7 +12,7 @@ AuthRouter.post('/reg', async (req, res) => {
 
     if (!password || !email) {
       return res.status(500)
-        .json('token or password is not provided !');
+        .json('email or password is not provided !');
     }
     const auth = await AuthService.CreateUser(email, password);
     return res.status(200)
@@ -23,6 +23,28 @@ AuthRouter.post('/reg', async (req, res) => {
       .json(errors.common[500]);
   }
 });
+
+
+AuthRouter.post('/login', async (req, res) => {
+  try {
+    const { email } = req.body;
+    const { password } = req.body;
+
+    if (!password || !email) {
+      return res.status(500)
+        .json('email or password is not provided !');
+    }
+    const login = await AuthService.UserLogin(email, password);
+    return res.status(200)
+      .json(login);
+  } catch (err) {
+    logger.error(err.message);
+    return res.status(500)
+      .json(errors.common[500]);
+  }
+});
+
+
 
 AuthRouter.get('/', async (req, res) => {
   try {

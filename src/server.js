@@ -4,6 +4,7 @@ const TicketsController = require('./controllers/TicketsController');
 const AuthController = require('./controllers/AuthController');
 const logger = require('./services/LoggerService');
 const mongoose = require('./DB/MongooseModule');
+const AuthMiddleware = require('./services/AuthMiddleware')
 
 const bootstrap = async () => {
   const app = express();
@@ -11,7 +12,7 @@ const bootstrap = async () => {
   app.use(bodyparser.json());
   await mongoose.connect();
 
-  app.use('/tickets', TicketsController);
+  app.use('/tickets', AuthMiddleware, TicketsController);
   app.use('/auth', AuthController);
 
   app.listen(process.env.PORT, () => {

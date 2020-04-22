@@ -1,9 +1,41 @@
+const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const UsersRepository = require('../repositories/UsersRepository');
-// const { secret } = require('../constants/jwt.config');
-
+const { secret, tokens } = require('../constants/jwt.config');
 
 const ReturnAuthUsers = () => UsersRepository.getAllUsers();
+const createAccessToken = (payload) => {
+  const data = {
+    email: payload,
+    type: tokens.access.type,
+  };
+  const options = { expiresIn: tokens.access.expiresIn };
+
+  return jwt.sign(data, secret, options);
+};
+
+const createRefreshToken = () => {
+  const data = {
+    id: uuidv4(),
+    type: tokens.refresh.type,
+  };
+  const options = { expiresIn: tokens.refresh.expiresIn };
+
+  return jwt.sign(data, secret, options);
+};
+
+const getTokens = (payload) => {
+  console.log(tokens)
+  const access = createAccessToken(payload);
+  const refresh = createRefreshToken();
+  const data = {
+    access,
+    refresh,
+  };
+  return data;
+};
+
 
 const CreateUser = async (email, password) => {
   const salt = 10;
@@ -12,11 +44,23 @@ const CreateUser = async (email, password) => {
     return 'user already exist!';
   }
   const hash = await bcrypt.hash(password, salt);
-  console.log(hash);
   return UsersRepository.AddUser(email, hash);
+};
+
+const UserLogin = async (email, password) => {
+  const user = await UsersRepository.FindUser(email);
+  if (!user) {
+    return 'User does not exist!';
+  }
+  const isValid = bcrypt.compareSync(password, user.passwordHash);
+  if (!isValid) {
+    return 'Invalid user pass';
+  }
+  return getTokens(email);
 };
 
 module.exports = {
   ReturnAuthUsers,
   CreateUser,
+  UserLogin,
 };
