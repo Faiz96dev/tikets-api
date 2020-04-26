@@ -1,4 +1,3 @@
-const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const UsersRepository = require('../repositories/UsersRepository');
@@ -17,7 +16,6 @@ const createAccessToken = (payload) => {
 
 const createRefreshToken = () => {
   const data = {
-    id: uuidv4(),
     type: tokens.refresh.type,
   };
   const options = { expiresIn: tokens.refresh.expiresIn };
@@ -26,7 +24,6 @@ const createRefreshToken = () => {
 };
 
 const getTokens = (payload) => {
-  console.log(tokens)
   const access = createAccessToken(payload);
   const refresh = createRefreshToken();
   const data = {

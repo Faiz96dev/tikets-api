@@ -1,13 +1,13 @@
 module.exports = {
-  secret: 'manda ',
+  secret: 'MANDA',
   tokens: {
     access: {
       type: 'access',
-      expiresIn: '2m',
+      expiresIn: '2h',
     },
     refresh: {
       type: 'refresh',
-      expiresIn: '20m',
+      expiresIn: '20h',
     },
   },
 };

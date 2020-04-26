@@ -8,9 +8,9 @@ module.exports = (req, res, next) => {
       .json({ message: 'Token not provided!' });
     return;
   }
-  const token = authHeader.replace('Bearer', '');
+  const token = authHeader.replace('Bearer ', '');
   try {
-    const payload = jwt.verify(secret, token);
+    const payload = jwt.verify(token, secret);
     if (payload.type !== 'access') {
       res.status(401)
         .json({ message: 'Invalid token! this is not access token' });

@@ -44,8 +44,6 @@ AuthRouter.post('/login', async (req, res) => {
   }
 });
 
-
-
 AuthRouter.get('/', async (req, res) => {
   try {
     const auth = await AuthService.ReturnAuthUsers();
