@@ -9,6 +9,10 @@ const TicketSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  date: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('tickets', TicketSchema);
