@@ -9,7 +9,7 @@ const TicketSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  date: {
+  addDate: {
     type: String,
     required: true,
   },

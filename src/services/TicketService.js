@@ -2,27 +2,25 @@ const TicketRepository = require('../repositories/TicketsRepository');
 
 const getTickets = () => TicketRepository.getAllTickets();
 
-const deleteTickets = (id) => {
-  if (!id) {
-    return 'id is not provided!';
+const deleteTickets = (data) => {
+  if (!data) {
+    return 'data is not provided!';
   }
-  return TicketRepository.deleteTickets(id);
+  if (data.length > 1) {
+    return TicketRepository.deleteMultiplyTickets(data);
+  }
+  return TicketRepository.deleteTickets(data);
 };
 
-const setTickets = (data) => {
-  if (!data.price || !data.direction) {
-    return 'place fill all fields in ticket to save!';
+const saveTickets = (data) => {
+  if (data.length > 1) {
+    return TicketRepository.saveMultiplyTickets(data);
   }
-  const ticket = {
-    ...data,
-    date: Date.now()
-      .toString(),
-  };
-  return TicketRepository.saveTickets(ticket);
+  return TicketRepository.saveTickets(data);
 };
 
 module.exports = {
   deleteTickets,
   getTickets,
-  setTickets,
+  saveTickets,
 };
