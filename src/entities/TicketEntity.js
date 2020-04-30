@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 const TicketSchema = mongoose.Schema({
-  direction: {
-    type: String,
-    required: true,
-  },
   price: {
     type: Number,
     required: true,
   },
-  addDate: {
+  carrier: {
     type: String,
+    required: true,
+  },
+  segments: {
+    type: Array,
     required: true,
   },
 });

@@ -2,17 +2,17 @@ const TicketEntity = require('../entities/TicketEntity');
 
 const getAllTickets = () => TicketEntity.find();
 
-const deleteTickets = (id) => {
-  return TicketEntity.deleteOne({ _id: id }, (err) => {
-    if (err) return err;
-  });
-};
+const deleteTickets = (id) => TicketEntity.deleteOne({ _id: id }, (err) => {
+  if (err) return err;
+});
 
 const saveTickets = (data) => {
+  const { price, carrier, segments } = data[0];
+  console.log(price)
   const ticket = new TicketEntity({
-    ...data,
-    addDate: Date.now()
-      .toString(),
+    price,
+    carrier,
+    segments,
   });
   ticket.save((err) => {
     if (err) return err;

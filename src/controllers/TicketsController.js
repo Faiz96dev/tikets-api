@@ -20,7 +20,6 @@ TicketsRouter.get('/', async (req, res) => {
 TicketsRouter.post('/', async (req, res) => {
   try {
     const data = req.body.tickets;
-    console.log(data)
     const tickets = await TicketService.saveTickets(data);
     return res.status(200)
       .json(tickets);
