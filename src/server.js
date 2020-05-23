@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const TicketsController = require('./controllers/TicketsController');
 const AuthController = require('./controllers/AuthController');
+const FilesController = require('./controllers/FilesController');
 const logger = require('./services/LoggerService');
 const mongoose = require('./DB/MongooseModule');
 const AuthMiddleware = require('./services/AuthMiddleware');
@@ -16,6 +17,7 @@ const bootstrap = async () => {
   app.use(cors());
   app.use('/tickets', AuthMiddleware, TicketsController);
   app.use('/auth', AuthController);
+  app.use('/files', FilesController);
 
   app.listen(process.env.PORT, () => {
     logger.info(`Server start at: ${process.env.PORT}`);
